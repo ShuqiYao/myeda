@@ -1,6 +1,5 @@
 ---
-title: "KG EDA REPORT TABLE STATISTICS"
-author: 'Hengchang Knowledge Graph'
+title: "TABLE EXPLORATORY DATA ANALYSIS REPORT"
 output:
   html_document: 
     theme: journal

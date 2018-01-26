@@ -1,6 +1,5 @@
 ---
-title: "探索性数据分析报告"
-author: 'Hengchang Knowledge Graph'
+title: "EXPLORATORY DATA ANALYSIS REPORT"
 output:
   html_document: 
     theme: journal
