@@ -26,8 +26,8 @@ num_all_missing <- SplitColType(params$data)$num_all_missing
 
 ```
 
-### 数据基础统计值
-数据大小为**`r format(object.size(data), units = "auto")`**. 表中有 **`r format(nrow(data), big.mark = ",")`** 行和 **`r format(ncol(data), big.mark = ",")`** 列（字段）. 在所有 **`r format(ncol(data), big.mark = ",")`**列中, **`r I(num_discrete)`** 个是离散型变量, **`r I(num_continuous)`** 个是连续型变量, 同时 **`r I(num_all_missing)`** 个全部缺失变量. 共有 **`r format(sum(is.na(data)), big.mark = ",")`** 缺失的观测值在 **`r format(nrow(data)*ncol(data), big.mark = ",")`** 个总观测值中.
+### Descriptive statistics summary
+The data is **`r format(object.size(data), units = "auto")`** in size. There are  **`r format(nrow(data), big.mark = ",")`** rows and **`r format(ncol(data), big.mark = ",")`** columns (feartrues). Of all **`r format(ncol(data), big.mark = ",")`** columns, **`r I(num_discrete)`** are discrete, **`r I(num_continuous)`** are continuous, and **`r I(num_all_missing)`** are all missing. There are **`r format(sum(is.na(data)), big.mark = ",")`** missing values out of  **`r format(nrow(data)*ncol(data), big.mark = ",")`** total data points
 
 #### Data Structure (Text)
 
@@ -57,6 +57,7 @@ ContinuousCorrelation(data)
 
 ### 离散变量的相关关系矩阵
 
+I
 该离散变量相关关系矩阵, 没有计算缺失值在70%以上的字段, 因为大量缺失的字段计算的相关关系并不显著, 没有实际意义. 其次, 剔除了观测值完全唯一的字段, 这些字段会导致计算相关关系时, 平均方差为0. 对所有计算过的相关关系中, 保留字段与其他字段相关关系最大值排序的前20列字段. 展示该20列数据的相关关系.
 
 该类别型变量相关关系计算中, 将各个类别用数字进行了编译, 然后对数据进行了pearson correlation计算, 返回的相关关系系数可能存在偏差. 

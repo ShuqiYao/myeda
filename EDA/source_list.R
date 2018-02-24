@@ -26,7 +26,7 @@ source("./render/render_tablestat.R")
 
 
 lib_list <- c("ggplot2","Hmisc","stringr",
-              "rmarkdown","data.table","scales")
+              "rmarkdown","data.table","scales","dplyr")
 
 for (i in (seq_along(1:length(lib_list))))
   if (!(lib_list[i] %in% installed.packages())){
@@ -40,4 +40,5 @@ library(scales)
 library(rmarkdown)
 library(Hmisc)
 library(reshape2)
+library(dplyr)
 
