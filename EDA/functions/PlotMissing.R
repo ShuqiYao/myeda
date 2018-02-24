@@ -28,7 +28,7 @@ PlotMissing <- function(data) {
     theme(legend.position = c("bottom")) + coord_flip() +
     xlab("Features") + ylab("Number of missing rows")
   } else {
-    print("Great! There is no variable missing over 40% of total number of observations")
+    output <- print("Great! There is no variable missing over 40% of total number of observations")
   }
   ## Print plot
   print(output)

@@ -23,10 +23,20 @@ source("./render/render_continuous.R")
 source("./render/render_discrete.R")
 source("./render/render_tablestat.R")
 
+
+
+lib_list <- c("ggplot2","Hmisc","stringr",
+              "rmarkdown","data.table","scales")
+
+for (i in (seq_along(1:length(lib_list))))
+  if (!(lib_list[i] %in% installed.packages())){
+    install.packages(lib_list[i],
+                     repos = "https://mirrors.tuna.tsinghua.edu.cn/CRAN/")
+  }
+
 library(ggplot2)
 library(data.table)
 library(scales)
-library(RJDBC)
 library(rmarkdown)
 library(Hmisc)
 library(reshape2)

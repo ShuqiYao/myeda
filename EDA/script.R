@@ -2,20 +2,16 @@
 
 
 args<-commandArgs(T)
+args<-c('./data/germancredit.csv','/Users/yaoshuqi/RProject/myeda/EDA')
 source('source_list.R')
+## Read csv data source here 
+df <- fread(args[1],data.table=F)
 ## put input arguments here
 
 
-# SetNa(data)
-data[data == "NULL"] <- NA
-data[data == "Null"] <- NA
-data[data == "null"] <- NA
-data[data == "Na"]   <- NA
-data[data == "na"]   <- NA
-data[data == ""]     <- NA
-
-TablestatMethod(data,save_path=args[3])
-ContinuousMethod(data,save_path= args[3])
-DiscreteMethod(data,save_path=args[3])
+SetNa(df)
+TablestatMethod(df,save_path=args[2])
+ContinuousMethod(df,save_path= args[2])
+DiscreteMethod(df,save_path=args[2])
 
 

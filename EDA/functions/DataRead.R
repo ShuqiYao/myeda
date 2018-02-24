@@ -1,0 +1,3 @@
+DataRead <- function(filename){
+  read
+}

@@ -20,7 +20,6 @@ knitr::opts_chunk$set(echo = FALSE)
 library(rmarkdown)
 library(dplyr)
 
-data <- params$data
 num_discrete <- SplitColType(params$data)$num_discrete
 num_continuous <- SplitColType(params$data)$num_continuous
 num_all_missing <- SplitColType(params$data)$num_all_missing

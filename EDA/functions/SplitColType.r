@@ -12,7 +12,7 @@ SplitColType <- function(data) {
   all_missing_ind <- sapply(data, function(x) {sum(is.na(x)) == length(x)})
   all_missing <- data[,which(all_missing_ind)]
   exc_mis <- data[,which(!all_missing_ind)]
-  du <- sapply(exc_mis, is.double)
+  du <- sapply(exc_mis, is.numeric)
   dou <- exc_mis[,which(du)]
   double <- sapply(dou, function(x) { x %% 1 == 0})
   double <- data.frame(double)
@@ -39,9 +39,13 @@ SplitColType <- function(data) {
   # time_variables <- select (continuous, -matches("time"))
   
   ## Create object for discrete features
-  disc <- dou[, which(ind)]
-  did <- exc_mis[ ,which (!du)]
-  discrete <- cbind(disc,did)
+  if (length(ind)==0){
+    discrete <- exc_mis[ ,which (!du)]
+  }else{
+    disc <- dou[, which(ind)]
+    did <- exc_mis[ ,which (!du)]
+    discrete <- cbind(disc,did)
+  }
   
   # 暂时先这么处理
   # 把名字这些没有意义的字段先都剔除出去
@@ -80,3 +84,4 @@ SplitColType <- function(data) {
     )
   )
 }
+
