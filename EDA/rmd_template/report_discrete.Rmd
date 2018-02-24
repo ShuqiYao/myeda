@@ -1,0 +1,45 @@
+---
+title: "EXPLORATORY DATA ANALYSIS"
+output:
+  html_document: 
+    theme: journal
+    toc: yes
+    toc_depth: 6
+    df_print: paged
+params:
+  data: x
+  colname: colname
+---
+
+## 离散型型变量 **`r colname`**
+
+### 描述性统计分析 
+
+```{r echo=FALSE}
+DiscreteSummary(x)
+```
+
+### 各个类别频数和频率
+
+```{r frequency, echo=FALSE}
+if (length(unique(x))<=50){
+df <- table(x)
+df <- as.data.frame(df)
+df
+} else {
+  print("There are too many catas, frequency table is ignored at this time")
+}
+
+```
+
+
+### 图像分析
+
+```{r bar_continuous, echo= FALSE}
+if (length(unique(x))<=100){
+DiscreteBar(x,...)
+} else {
+  print("There are too many catagories to plot a bar plot( >100 )")
+}
+```
+
