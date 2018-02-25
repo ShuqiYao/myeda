@@ -2,7 +2,7 @@
 
 
 args<-commandArgs(T)
-args<-c('./data/germancredit.csv','/Users/yaoshuqi/RProject/myeda/EDA')
+args<-c('./data/germancredit.csv','D:/Users/yaoshuqi/RProject/myeda/EDA')
 source('source_list.R')
 ## Read csv data source here 
 df <- fread(args[1],data.table=F)

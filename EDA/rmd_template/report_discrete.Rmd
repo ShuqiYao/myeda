@@ -11,15 +11,15 @@ params:
   colname: colname
 ---
 
-## 离散型型变量 **`r colname`**
+## Discrete feartrue **`r colname`**
 
-### 描述性统计分析 
+### Descriptive Summary  
 
 ```{r echo=FALSE}
 DiscreteSummary(x)
 ```
 
-### 各个类别频数和频率
+### Frequency table
 
 ```{r frequency, echo=FALSE}
 if (length(unique(x))<=50){
@@ -33,7 +33,7 @@ df
 ```
 
 
-### 图像分析
+### Graph Analysis
 
 ```{r bar_continuous, echo= FALSE}
 if (length(unique(x))<=100){

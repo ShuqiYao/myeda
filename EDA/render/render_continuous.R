@@ -1,9 +1,11 @@
-render_continuous <- function(x, graph_type = "histogram",binwidth,output_file="report.html",output_dir=getwd(),...) {
+render_continuous <- function(x, graph_type = "all", 
+                              binwidth,output_file="report.html",colname,
+                              output_dir=getwd(),...) {
   render(
-    input = "/data/yaoshuqi/r_file/Myscript/my_test/rmd_template/report_continuous.Rmd",
+    input = "./rmd_template/report_continuous.Rmd",
     output_file = output_file,
     output_dir = output_dir,
-    params = list(data = x, graph_type = "histogram")
+    params = list(data = x, graph_type = graph_type,colname = colname)
   )
   
 }

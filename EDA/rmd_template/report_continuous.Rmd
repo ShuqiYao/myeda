@@ -8,18 +8,19 @@ output:
     df_print: paged
 params:
   data: x
-  graph_type: histogram
+  graph_type: graph_type
+  colname: colname
 ---
 
-## 连续型变量
+## Continuous feature **`r colname`**
 
-### 描述性统计分析
+### Descriptive Summary
 
 ```{r echo=FALSE}
 ContinuousSummary(x)
 ```
 
-### 图像分析
+### Graph analysis
 
 ```{r histogram_continuous, echo=FALSE}
   if (graph_type == "histogram") {
@@ -35,7 +36,7 @@ ContinuousSummary(x)
 
 ```
 
-### Chi,t检验
+### Chi-test for normalization
 ``` {r chisq, echo=FALSE}
 ContinuousTests(x)
 ```
