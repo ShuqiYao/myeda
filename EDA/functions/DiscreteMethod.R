@@ -7,17 +7,11 @@ DiscreteMethod <- function(data,save_path = getwd(),...) {
   
   sapply(seq_along(discrete),function(j,...){
     x <- discrete[,j]
-    # x_name <- names(discrete)[j]
-    
-    split_name <-strsplit(colnames(discrete),"\\.")
-    k <- split_name[j]
-    
-    tabname <- unlist(k)[1]
-    colname <- unlist(k)[2]
+    colname <- colnames(discrete)[j]
     
     # s_path <- paste(getwd(),'/','output',sep = '') #把输出总目录缩短写
-    dir.create(paste(save_path,'/output','/',date,'/',tabname,'/','col',sep = ''))
-    save_path <- paste(save_path,'/output','/',date,'/',tabname,'/','col',sep = '')
+    dir.create(paste(save_path,'/output','/',date,'/','col',sep = ''))
+    save_path <- paste(save_path,'/output','/',date,'/','col',sep = '')
     
     file_name <- paste(colname,".html",sep = '') #文件名称
     if(file.exists(file_name)) {file.remove(file_name)}
